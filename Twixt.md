@@ -23,7 +23,7 @@ If you just want a quick taste of what Twixt does:
 * Try different values for the TWIXT knob.
 
 ### Videos
-Short videos: [teaser](https://youtu.be/XVvhzCE7Hsk?si=nbeVQ3aMhPy6dM-O), [slightly more informative](https://youtu.be/WoRrLPeSNlc?si=_K4vIA7JKqTKTFfQ), [short](https://www.youtube.com/shorts/FhxLgaAo-Xw). Note that none of these feature the current design.
+Short videos: [an early teaser](https://youtu.be/XVvhzCE7Hsk?si=nbeVQ3aMhPy6dM-O), [a slightly more informative one](https://youtu.be/WoRrLPeSNlc?si=_K4vIA7JKqTKTFfQ), [a vertical short](https://www.youtube.com/shorts/FhxLgaAo-Xw). Note that none of these feature the current design.
 
 ### Uses
 * **Access the sounds between other sounds.** When you have two or more distinct sonic qualities you want to explore for the same section of a patch (e.g., making the lead melody "clean" vs. "drenched in chorus and reverb" vs. "overdriven"):
@@ -100,31 +100,61 @@ To make Point movements easier to create, Twixt includes some .WAV files that ca
 They currently include movement in a circle, a square, and a triangle. Playing these files slower, faster, reversed, amplified, and combining/mixing multiple playback heads or files can create interesting movements.
 
 ### TWIXT
-There are currently five different methods Twixt can use to determine what values the Outputs have when not directly atop a Square. This knob determines which is to be used.
+There are currently five different methods Twixt can use to determine what values the Outputs have when not directly atop a Square. In mathematical terms, this determines how values are *interpolated* between the Squares.
+This knob determines which method is to be used.
+
 They are:
 * **Bilinear Squared**
 * **Bilinear Cubic**
 * **Venetian Secret**
 * **Tactical Map**
 * **Nearest Square**
-These methods are in order from most gradual changes in value to least. In Nearest Square, the Outputs are just set to the values of the closest Square. This can be handy if you want to quickly change from one square's setting to another without having to be terribly careful in your mouse clicking.
+
+These methods are in order from most-to-least gradual changes in output values. In Nearest Square, the Outputs are simply set to the values of the closest Square. This can be handy if you want to quickly change from one square's setting to another without having to be terribly careful in your mouse clicking.
+
+The display for whichever Output is selected will be different for each of these TWIXT settings, showing how they affect Output values.
+
+Note that in the **Bilinear Squared** and **Bilinear Cubic** TWIXT settings, the relative **size** of each squares (which can be changed with "q" and "e") affect the amount of influence that Square's values have. Try Twixt's "Size Matters" preset to see an example of this.
 
 ### Outputs
-On the 
+On the right side of the Twixt module is twelve sets of controls, one for each output:
+
+![Twixt Outputs](images/TwixtOutputs.png)
+
+These controls are, from left to right:
+* A button that selects that Output as the one to show in the Surface. This shows the Squares and the colors convey how the values of that Output change across the surface. See the Twixt menu for many options for changing the colors and other aspects of this display.
+* A knob showing the current value for this Output for the selected Square. Changing this value will change the value of this output at the currently selected Square. It may also affect (more gradually) the value of the output throughout the Surface; this effect depends on the TWIXT method.
+* The output port itself.
 
 ### Menu Options
 #### Randomize
-The Randomize menu option found on every module will, in Twixt, also replace any existing Squares with a random set of new ones. The Squares will also have randomly generated names and MATH1 formulas.
-#### Show Keyboard Commands
-As noted above, when set (the default), this will show the larger version of the editing keyboard commands. Unsetting it will replace it with a small icon.
-#### Only Compute MATH1 for a Square when inside it
-Defaults to true. By default, the value of MATH1 is zero for a particular Square when Point is not in the Square. This is to reduce the CPU load. If, however, the value of MATH1 is important for a Square even when Point is not in it, then unset this menu option.
+The standard VCV Randomize menu option found on every module will, in Twixt, also replace any existing Squares with a random set of new ones. The Squares will also have randomly generated names and random Output values from -10 to 10.
+
+For **vastly** more tunable and useful randomization of Twixt, see the companion [Mixt](#mixt) module.
 #### Point position X ranges from 0-10 instead of -5 - 5
 When set, the X input will be expected from 0-10, and the X output will fall into that range as well.
 #### Point position Y ranges from 0-10 instead of -5 - 5
 When set, the Y input will be expected from 0-10, and the Y output will fall into that range as well.
-#### MATH Cheat Sheet
-Just shows a brief reminder of all the functions and variable names Twixt will recognize.
+#### Color Scheme
+A set of color schemes for the Surface display. Color Schemes have no effect on the Output values, they just
+illustrate the interpolation of values for the viewer.
+
+A few of them deserve further explanation:
+* **VCV Cable Ports** duplicates the coloring that VCV cable heads show when carrying a particular voltage.
+* **Distant Dawn** is esigned to only include colors that remain discernable for people with many forms of color blindness.
+* **White Stripes** highlights even small variations in Output voltages.
+* **Anonymous Zebra** also highlights small variations in Output voltages and is enjoyably cryptic and stripey. Try the "Ahhhh my eyes" preset as an example.
+
+#### Range of color scheme
+By default, the color scheme assigns color to voltages with the assumption that -10V to 10V is the full range. It's not unusual, though, to have Outputs with a small range of voltages, such as only from 0V to 10V, or even far smaller, and this can make the Surface's display less informative.  Here you can set the range as you wish.
+
+As above, this will have no effect on the Outputs, this only affects the display.
+
+#### Brightness
+You can dim the Display an arbitrary amount with this control. If the Twixt display is harshing your patching at 2AM in the dark vibe, here's your solution.
+
+#### Show squares and names
+Sometimes the Surface is more enjoyable to use or look at without the Squares being drawn.
 
 ### Bypass Behavior
 If this module is bypassed, then all output values will be 0.0V. However, you can continue to
