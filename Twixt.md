@@ -151,7 +151,7 @@ By default, the color scheme assigns color to voltages with the assumption that 
 As above, this will have no effect on the Outputs, this only affects the display.
 
 #### Brightness
-You can dim the Display an arbitrary amount with this control. If the Twixt display is harshing your patching at 2AM in the dark vibe, here's your solution.
+You can dim the Display an arbitrary amount with this control. If the Twixt display is harshing your 2AM-patching-in-the-dark vibe, here's your solution.
 
 #### Show squares and names
 Sometimes the Surface is more enjoyable to use or look at without the Squares being drawn.
@@ -163,8 +163,42 @@ edit the Surface, adding and changing Squares as you wish.
 ![Line Break image](images/Separator.png)
 
 # Mixt
-[TODO] Complete this.
+Mixt is a companion module to Twixt, allowing you to more easily set random Output values for a single Square, a single Output across all Squares, or all Outputs on all Squares.
 
+![Mixt Overview](images/MixtHeadline.png)
+
+By placing Mixt next to your Twixt module, you gain access to more tunable randomization and the ability to explore different variations while taking advantage of VCV Rack's built-in Undo/Redo history.
+
+## Use Example
+* Place a Mixt module directly next to your Twixt module (the appropriate connection light at the top will illuminate).
+* Select a Square in Twixt.
+* On Mixt, adjust the Upper and Lower limits (e.g., 0V to 5V).
+* Use the DISTRIBUTION knob to select the how you want values to be chosen. 
+* Click the **CURRENT SQUARE** button to randomize the values of the current Square. The Output knobs for that Square will instant;y change.
+* Listen to the new output. If you don't like it, press **Ctrl+Z** (Undo) to instantly revert.
+* Try turning the DISTRIBUTION knob to shape the probability curve, then click **CURRENT SQUARE** button again and see how the values come out.
+
+## Uses
+* **Dial in more useful randomizations.** Twixt's built-in randomization sets outputs anywhere from -10V to 10V. If an Output is being used in a was that only sounds good when the outputs stay between 0V and 5V, use Mixt to randomize the Output to that range, and use DISTRIBUTE to affect how those values are chosen.
+* **Targeted parameter shuffling.** Randomize just the positions of your squares while leaving their values intact, or randomize a single CV output across your entire surface more quickly than moving through each Square.
+* **Set all Outputs to a single value.** At the lowest value of DISTRIBUTION, it will set all values it randomizes to the average of the two limits. For example, set both limits to 2.25, pick the lowest DISTRIBUTION value, and whatever you now randomize will all be set to 2.25. Note that the highest value of DISTRIBUTE will only set values to one or the other of the two limits. 
+
+## Controls
+
+### Connection Lights
+At the top left and right of the module, two lights indicate whether Mixt has successfully linked to an adjacent Twixt module.
+
+### Limits & Distribution
+These knobs define the pool of random values that will be generated.
+* **Upper & Lower Limits:** Set the absolute maximum and minimum voltages for the randomized outputs. The precise values are shown on the numeric displays. (Note: Mixt will automatically correct the logic if you set the lower limit higher than the upper limit).
+* **Distribution:** Shapes the probability density function (PDF) curve of the random values. The curve is visually represented on the graphical display, allowing you to bias the random results toward the center, the extremes, or evenly across your specified limits.
+
+### Randomize Actions
+Four buttons trigger immediate randomizations based on your Limits and Distribution settings. 
+* **Current Square** randomizes all 12 output values of the Square currently selected in Twixt.
+* **Current Output** randomizes the value of the currently selected Output (CV 1-12) across *all* Squares in Twixt.
+* **All Squares** randomizes all 12 output values for *every* Square on the Twixt surface.
+* **All Positions** randomizes the X and Y positions of all Squares on the Twixt surface, but does not change the Output values for any Squares. The DISTRIBUTION has no effect on this operation.
 
 # Acknowledgements
 
