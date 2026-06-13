@@ -169,6 +169,8 @@ Mixt is a companion module to Twixt, allowing you to more easily set random Outp
 
 By placing Mixt next to your Twixt module, you gain access to more tunable randomization and the ability to explore different variations while taking advantage of VCV Rack's built-in Undo/Redo history.
 
+Once you've gotten your Twixt module's Outputs the way you want them, you can remove the Mixt module.
+
 ## Use Example
 * Place a Mixt module directly next to your Twixt module (the appropriate connection light at the top will illuminate).
 * Select a Square in Twixt.
@@ -191,13 +193,28 @@ At the top left and right of the module, two lights indicate whether Mixt has su
 ### Limits & Distribution
 These knobs define the pool of random values that will be generated.
 * **Upper & Lower Limits:** Set the absolute maximum and minimum voltages for the randomized outputs. The precise values are shown on the numeric displays. (Note: Mixt will automatically correct the logic if you set the lower limit higher than the upper limit).
-* **Distribution:** Shapes the probability density function (PDF) curve of the random values. The curve is visually represented on the graphical display, allowing you to bias the random results toward the center, the extremes, or evenly across your specified limits.
+* **Distribution:** Shapes the probability density function (PDF) curve of the random values. The curve is visually represented on the little display, allowing you to bias the random results in a number of useful ways.
+
+![Mixt Distributions](images/MixtDistributions.png)
+
+Example DISTRIBUTION settings.
+* 0 -> A single value that is the average of the two limits.
+* 1 -> A bell curve or Gaussian distribution, favoring values in the middle.
+* 2 -> A uniform distribution, equally likely to pick any value between the limits.
+* 3 -> An inverted Gaussian, picking nothing in the middle.
+* 4 -> Only picks the two limit values.
+
+Note that any value between these integer values for DISTRIBUTION are also valid. Here are DISTRIBUTION settings at 0.5, 1.5, 2.5, and 3.5.
+![More Mixt Distributions](images/MixtDistTwo.png)
 
 ### Randomize Actions
-Four buttons trigger immediate randomizations based on your Limits and Distribution settings. 
+Four buttons trigger immediate randomizations in adjacent Twixt modules based on your Limits and Distribution settings. 
 * **Current Square** randomizes all 12 output values of the Square currently selected in Twixt.
 * **Current Output** randomizes the value of the currently selected Output (CV 1-12) across *all* Squares in Twixt.
 * **All Squares** randomizes all 12 output values for *every* Square on the Twixt surface.
+
+And also:
+
 * **All Positions** randomizes the X and Y positions of all Squares on the Twixt surface, but does not change the Output values for any Squares. The DISTRIBUTION has no effect on this operation.
 
 # Acknowledgements
