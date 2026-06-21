@@ -160,6 +160,9 @@ Sometimes the Surface is more enjoyable to use or look at without the Squares be
 If this module is bypassed, then all output values will be 0.0V. However, you can continue to
 edit the Surface, adding and changing Squares as you wish.
 
+### Related Modules
+stoermelder's [TRANSIT](https://library.vcvrack.com/Stoermelder-P1/Transit) also does morphing from one set of knob values to another. It has the advantage of being able to directly control the knobs and switches of other modules.
+
 ![Line Break image](images/Separator.png)
 
 # Mixt
