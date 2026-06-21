@@ -1,6 +1,6 @@
 # Twixt, a CV signal controller module for VCV Rack
 
-Twixt is a signal generator for VCV Rack.
+Twiddle twelve signals with a single click. Twixt is a signal generator for VCV Rack with twelve outputs.
 
 Twixt is useful for exploring the sonic spaces between desired sonic points (the Squares). It also has unique randomization capabilities (with undo and redo) using the companion module [Mixt](#mixt) that make it delightful for sonic exploration. 
 
@@ -100,7 +100,8 @@ To make Point movements easier to create, Twixt includes some .WAV files that ca
 They currently include movement in a circle, a square, and a triangle. Playing these files slower, faster, reversed, amplified, and combining/mixing multiple playback heads or files can create interesting movements.
 
 ### TWIXT
-There are currently five different methods Twixt can use to determine what values the Outputs have when not directly atop a Square. In mathematical terms, this determines how values are *interpolated* between the Squares.
+There are currently five different methods Twixt can use to determine what values the Outputs have when not directly atop a Square. In mathematical terms, this determines how values are *interpolated* between the Squares,
+or how values *morph* between one square and the next.  
 This knob determines which method is to be used.
 
 They are:
@@ -110,7 +111,7 @@ They are:
 * **Tactical Map**
 * **Nearest Square**
 
-These methods are in order from most-to-least gradual changes in output values. In Nearest Square, the Outputs are simply set to the values of the closest Square. This can be handy if you want to quickly change from one square's setting to another without having to be terribly careful in your mouse clicking.
+These methods are in order from most-to-least gradual changes in output values. In Nearest Square, the Outputs are simply set to the values of the closest Square. This can be handy if you want to quickly change from one square's setting to another without having to be particularly careful in your mouse clicking.
 
 The display for whichever Output is selected will be different for each of these TWIXT settings, showing how they affect Output values.
 
