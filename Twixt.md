@@ -23,7 +23,9 @@ If you just want a quick taste of what Twixt does:
 * Try different values for the TWIXT knob.
 
 ### Videos
-Short videos: [an early teaser](https://youtu.be/XVvhzCE7Hsk?si=nbeVQ3aMhPy6dM-O), [a slightly more informative one](https://youtu.be/WoRrLPeSNlc?si=_K4vIA7JKqTKTFfQ), [a vertical short](https://www.youtube.com/shorts/FhxLgaAo-Xw). Note that none of these feature the current design.
+Short videos: [an early teaser](https://youtu.be/XVvhzCE7Hsk?si=nbeVQ3aMhPy6dM-O), [a slightly more informative one](https://youtu.be/WoRrLPeSNlc?si=_K4vIA7JKqTKTFfQ), [a vertical short](https://www.youtube.com/shorts/FhxLgaAo-Xw). Note that none of these feature the final design.
+
+Feature videos: [moving Point](https://youtu.be/mH-AyvrwWUw).
 
 ### Uses
 * **Access the sounds between other sounds.** When you have two or more distinct sonic qualities you want to explore for the same section of a patch (e.g., making the lead melody "clean" vs. "drenched in chorus and reverb" vs. "overdriven"):
@@ -84,7 +86,7 @@ There are menu options on Twixt to change either or both of the X and Y axis fro
 
 ![X and Y controls](images/TwixtXY.png)
 
-The Point's position can be set (and moved) in a number of ways:
+The Point's position can be set (and moved) in a number of ways (see [this video for a demonstration](https://youtu.be/mH-AyvrwWUw)):
 * Clicking or dragging on the surface will move the Point to that position.
 * On the left side of Twixt, there are a number of controls to move Point: 
 * * Inputs at the top for setting X and Y. If these are not set, then the last position set by clicking on the surface will be used.
