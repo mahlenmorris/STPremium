@@ -25,7 +25,9 @@ If you just want a quick taste of what Twixt does:
 ### Videos
 Short videos: [an early teaser](https://youtu.be/XVvhzCE7Hsk?si=nbeVQ3aMhPy6dM-O), [a slightly more informative one](https://youtu.be/WoRrLPeSNlc?si=_K4vIA7JKqTKTFfQ), [a vertical short](https://www.youtube.com/shorts/FhxLgaAo-Xw). Note that none of these feature the final design.
 
-Feature videos: [moving Point](https://youtu.be/mH-AyvrwWUw).
+Feature videos:
+* [Introduction and controls](https://youtu.be/u9njGX3w1Nk)
+* [Moving Point](https://youtu.be/mH-AyvrwWUw).
 
 ### Uses
 * **Access the sounds between other sounds.** When you have two or more distinct sonic qualities you want to explore for the same section of a patch (e.g., making the lead melody "clean" vs. "drenched in chorus and reverb" vs. "overdriven"):
@@ -40,6 +42,8 @@ Feature videos: [moving Point](https://youtu.be/mH-AyvrwWUw).
 * **Explore changing many properties of a patch at once.**
 
 ## Controls
+
+A [video overview of the Twixt controls](https://youtu.be/u9njGX3w1Nk).
 
 ### The Square Surface
 The large black are in the center of Twixt is where the Squares and the Point reside.
