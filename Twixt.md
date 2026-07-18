@@ -116,12 +116,31 @@ They are:
 * **Venetian Secret**
 * **Tactical Map**
 * **Nearest Square**
+* **Block Topology**
 
 These methods are in order from most-to-least gradual changes in output values. In Nearest Square, the Outputs are simply set to the values of the closest Square. This can be handy if you want to quickly change from one square's setting to another without having to be particularly careful in your mouse clicking.
 
 The display for whichever Output is selected will be different for each of these TWIXT settings, showing how they affect Output values.
 
-Note that in the **Bilinear Squared** and **Bilinear Cubic** TWIXT settings, the relative **size** of each squares (which can be changed with "q" and "e") affect the amount of influence that Square's values have. Try Twixt's "Size Matters" preset to see an example of this.
+Note that in the **Block Topology**, **Bilinear Squared** and **Bilinear Cubic** TWIXT settings, the relative **size** of each squares (which can be changed with "q" and "e") affect the amount of influence that Square's values have. Try Twixt's "Size Matters" preset to see one example of this.
+
+Also note that **Block Topology** has slightly different behavior than the others:
+* Point has to be inside a Square to take on its values.
+* If Point is outside of all Squares, then all Outputs are zero.
+* Squares can overlap; if Point is over more than one Square, then the Outputs take the value of the *smaller* Square. This allows you to use large Squares in the background to set
+Output values, with smaller Squares setting special values for that area.
+
+### TILING
+Sometimes it's useful to have small discrete areas of Output values instead of continuous changes over small movements. The TILING control is a simple way to add that. There are currently four settings:
+* **None** - the default.
+* **Squares**
+* **Hexagons**
+* **Triangles**
+
+The non-None settings all impose a pattern of tiles of the stated shape over the Surface defined by the Squares and TWIXT. Each tile uses the Output values from
+the center of that tile and uses them for the entirety of the tile.
+
+Tiling can be especially interesting when you control two or more Twixt's with the same mouse gestures. Try using different tilings on the different Twixts! 
 
 ### Outputs
 On the right side of the Twixt module is twelve sets of controls, one for each output:
@@ -137,11 +156,14 @@ These controls are, from left to right:
 #### Randomize
 The standard VCV Randomize menu option found on every module will, in Twixt, also replace any existing Squares with a random set of new ones. The Squares will also have randomly generated names and random Output values from -10 to 10.
 
-For **vastly** more tunable and useful randomization of Twixt, see the companion [Mixt](#mixt) module.
+For **vastly** more tunable and useful randomization and editing of Twixt, see the companion [Mixt](#mixt) module.
+
 #### Point position X ranges from 0-10 instead of -5 - 5
 When set, the X input will be expected from 0-10, and the X output will fall into that range as well.
+
 #### Point position Y ranges from 0-10 instead of -5 - 5
 When set, the Y input will be expected from 0-10, and the Y output will fall into that range as well.
+
 #### Color Scheme
 A set of color schemes for the Surface display. Color Schemes have no effect on the Output values, they just
 illustrate the interpolation of values for the viewer.
@@ -153,9 +175,17 @@ A few of them deserve further explanation:
 * **Anonymous Zebra** also highlights small variations in Output voltages and is enjoyably cryptic and stripey. Try the "Ahhhh my eyes" preset as an example.
 
 #### Range of color scheme
-By default, the color scheme assigns color to voltages with the assumption that -10V to 10V is the full range. It's not unusual, though, to have Outputs with a small range of voltages, such as only from 0V to 10V, or even far smaller, and this can make the Surface's display less informative.  Here you can set the range as you wish.
+By default, the color scheme assigns color to voltages with the assumption that -10V to 10V is the full range. It's not unusual, though, to have Outputs with a small range of voltages, such as only from 0V to 10V, or even far smaller, and this can make the Surface's display less informative. Here you can manually set the range as you wish.
 
-As above, this will have no effect on the Outputs, this only affects the display.
+There are also options here that let Twixt decide what the range should be:
+
+* **Use range set by sliders above** - just uses the values of the sliders
+* **Auto-fit to all values** - Computes the maximum and minimum values across the entire Twixt. With this, you use the entirety of the colors in the Color Scheme, 
+but a particular value will be the same color from oune Output to another. 
+* **Auto-fit to current output** - Computes the maximum and minimum values for each Output. So every Output display always runs the full color gamut, but a color will mean different
+values in different Outputs.
+
+As above, these options have no effect on the Output values, they only affect the display.
 
 #### Brightness
 You can dim the Display an arbitrary amount with this control. If the Twixt display is harshing your 2AM-patching-in-the-dark vibe, here's your solution.
@@ -191,9 +221,10 @@ Once you've gotten your Twixt module's Outputs the way you want them, you can re
 * Try turning the DISTRIBUTION knob to shape the probability curve, then click **CURRENT SQUARE** button again and see how the values come out.
 
 ## Uses
-* **Dial in more useful randomizations.** Twixt's built-in randomization sets outputs anywhere from -10V to 10V. If an Output is being used in a was that only sounds good when the outputs stay between 0V and 5V, use Mixt to randomize the Output to that range, and use DISTRIBUTE to affect how those values are chosen.
+* **Dial in more useful randomizations.** Twixt's built-in randomization sets outputs anywhere from -10V to 10V. If an Output is being used in a was that only sounds good when the outputs stay between -1V and 2.2V, use Mixt to randomize the Output to that range, and use DIST, BIAS and the Left/Both/Right switch to affect how those values are chosen.
 * **Targeted parameter shuffling.** Randomize just the positions of your squares while leaving their values intact, or randomize a single CV output across your entire surface more quickly than moving through each Square.
-* **Set all Outputs to a single value.** At the lowest value of DISTRIBUTION, it will set all values it randomizes to the average of the two limits. For example, set both limits to 2.25, pick the lowest DISTRIBUTION value, and whatever you now randomize will all be set to 2.25. Note that the highest value of DISTRIBUTE will only set values to one or the other of the two limits. 
+* **Set all Outputs to a single value.** At the lowest value of DIST, it will set all values it randomizes to the average of the two limits. For example, set both limits to 2.25, pick the lowest DISTRIBUTION value, and whatever you now randomize will all be set to 2.25. Note that the highest value of DIST will only set values to one or the other of the two limits.
+* Easily moving the Squares about the Surface speedily while allowing you to Undo the changes easily.
 
 ## Controls
 
@@ -202,30 +233,62 @@ At the top left and right of the module, two lights indicate whether Mixt has su
 
 ### Limits & Distribution
 These knobs define the pool of random values that will be generated.
-* **Upper & Lower Limits:** Set the absolute maximum and minimum voltages for the randomized outputs. The precise values are shown on the numeric displays. (Note: Mixt will automatically correct the logic if you set the lower limit higher than the upper limit).
-* **Distribution:** Shapes the probability density function (PDF) curve of the random values. The curve is visually represented on the little display, allowing you to bias the random results in a number of useful ways.
+#### Upper Limit Knob
+The maximum value of the range of OUT values. Defaults to 10.0V.
+Don't worry if this is below the lower limit, Mixt will automatically
+swap the limits in a sensical way.
+#### Lower Limit Knob
+The minimum value of the range of OUT values. Defaults to -10.0V.
+Don't worry if this is above the upper limit, Mixt will automatically
+swap the limits in a sensical way.
 
-![Mixt Distributions](images/MixtDistributions.png)
+----
+This illustrates how the switch, DIST, and BIAS interact:
 
-Example DISTRIBUTION settings.
+![Knob Demo GIF](images/KnobDemoMedium.gif)
+
+#### Left/Both/Right Switch
+* Left: Use only the left side of the distribution curve. Note that BIAS has no effect when Left is chosen.
+* Both: Use the full width of the distribution curve. BIAS can further affect the shape of the value distribution.
+* Right: Use only the right side of the distribution curve. Note that BIAS has no effect when Right is chosen.
+#### DIST Knob
+Shapes the probability density function (PDF) curve of the random values. The curve is visually represented on the little display, allowing you to change the range and distribution of the random values in a number of useful ways.
+
+Example DIST settings when the switch is set to "Both":
 * 0 -> A single value that is the average of the two limits.
 * 1 -> A bell curve or Gaussian distribution, favoring values in the middle.
 * 2 -> A uniform distribution, equally likely to pick any value between the limits.
 * 3 -> An inverted Gaussian, picking nothing in the middle.
 * 4 -> Only picks the two limit values.
+#### BIAS Knob
+Only applied when the switch is set to "Both". This allows the PDF curve to be "biased" to higher or lower values.
 
-Note that any value between these integer values for DISTRIBUTION are also valid. Here are DISTRIBUTION settings at 0.5, 1.5, 2.5, and 3.5.
-![More Mixt Distributions](images/MixtDistTwo.png)
+----
+## Buttons
 
-### Randomize Actions
+These buttons all perform actions on any Twixt modules touching the left or right side of Mixt.
+
+![Mixt Buttons](images/MixtButtons.png)
+
+### Randomize Buttons
 Four buttons trigger immediate randomizations in adjacent Twixt modules based on your Limits and Distribution settings. 
 * **Current Square** randomizes all 12 output values of the Square currently selected in Twixt.
 * **Current Output** randomizes the value of the currently selected Output (CV 1-12) across *all* Squares in Twixt.
 * **All Squares** randomizes all 12 output values for *every* Square on the Twixt surface.
-
-And also:
-
 * **All Positions** randomizes the X and Y positions of all Squares on the Twixt surface, but does not change the Output values for any Squares. The DISTRIBUTION has no effect on this operation.
+
+### Nudge Buttons
+There are eight buttons for nudging either values or Square positions.
+
+Much like a repeating keyboard key, these buttons will repeat their action after holding the button down for half a second. 
+
+### Squeeze/Stretch Buttons
+There are four buttons that squeeze or stretch out their respective items.
+
+* When applied to CURRENT OUTPUT, this moves the values in each square of the current output (farther away from/closer to) the average value of the squares.
+* When applied to ALL POSITIONS, this moves the Squares (farther away from/closer to) the middle of the Surface.
+
+Much like a repeating keyboard key, these buttons will repeat their action after holding the button down for half a second. 
 
 # Acknowledgements
 
