@@ -9,7 +9,7 @@ Twixt is a 2D graphical signal generator consisting of up to sixteen visible Squ
 each with 12 output values, and a visible Point chosen by mouse or CV.
 Where the Point is in relation to the Squares (and their values) determines the 12 CV outputs.
 
-Twixt's "making values between known sets of values" UI is inspired by Metasurface part of [AudioMulch](http://www.audiomulch.com/), a desktop music studio.
+Twixt's "making values between known sets of values" UI is inspired by the Metasurface UI of [AudioMulch](http://www.audiomulch.com/), a desktop music studio.
 
 ![Twixt Overview](images/TwixtHeadline.png)
 
@@ -33,7 +33,7 @@ Feature videos:
 * **Access the sounds between other sounds.** When you have two or more distinct sonic qualities you want to explore for the same section of a patch (e.g., making the lead melody "clean" vs. "drenched in chorus and reverb" vs. "overdriven"):
 * * Make each of those a Square.
 * * Attach the outputs to the inputs of the modules that control those qualities.
-* * Move the Point on top of each of the squares.
+* * Move the Point on top of each of the Squares.
 * * * Type in the name of Square.
 * * * Adjust the output values that create that quality.
 * * Pick a TWIXT value (e.g., Bilinear Squared), and drag the point around with the mouse to hear the sounds between the ones you created.
@@ -46,7 +46,7 @@ Feature videos:
 A [video overview of the Twixt controls](https://youtu.be/u9njGX3w1Nk).
 
 ### The Square Surface
-The large black are in the center of Twixt is where the Squares and the Point reside.
+The large black area in the center of Twixt is where the Squares and the Point reside.
 
 #### Squares
 Each Square has a number from 1 - 16. They can also have names, edited with the NAME edit field on the right side.
@@ -60,14 +60,14 @@ These edits affect
 whichever Square is currently **selected**; the currently selected Square is shown in slightly thicker lines, and its corresponding number is shown in a small white window to the left of the Surface (just above the NAME).
 
 * Make new Squares:
-* * **F** - create a brand new Square centered on where the mouse cursor is currently hovering over the surface. That new Square will now be the selected Square. All of its values will be zero.
-* * **R** - copies the selected Square and places the copy centered on where the mouse cursor is currently hovering over the surface. If the original Square had a NAME, (e.g., "Spacey") then the new Square will have a similar name (e.g., "Copy of Spacey").
+* * **F** - create a brand new Square centered on where the mouse cursor is currently hovering over the Surface. That new Square will now be the selected Square. All of its values will be zero.
+* * **R** - copies the selected Square and places the copy centered on where the mouse cursor is currently hovering over the Surface. If the original Square had a NAME, (e.g., "Spacey") then the new Square will have a similar name (e.g., "Copy of Spacey").
 * Changing or moving the selected Square:
 * * **W/A/S/D** - move the selected Square around the space.
 * * **Q** - shrink the selected Square. Some settings of TWIXT take into account the relative sizes of the Squares when computing the values of the outputs.
 * * **E** - enlarge the selected Square.
 * Changing which Square is selected:
-* * Right-clicking the mouse pointer on the Surface will make the nearest Square be the selected square.
+* * Right-clicking the mouse pointer on the Surface will make the nearest Square be the selected Square.
 * * **C/Z** or **TAB/SHIFT-TAB** - cycles through the Squares, selecting each in turn. **C** and **TAB** move to the next higher numbered Square, **Z** and **SHIFT-TAB** move to lower numbers, and both gestures wrap around from the last Square to the first.
 * Remove Squares:
 * * **X** - deletes the selected Square.
@@ -83,7 +83,7 @@ A couple of notes:
 Clicking this button will replace the colorful graphical display of the Surface and show the keyboard help.
 
 ### The Point
-The Point is a small circle in the Surface that controls the signals sent by each of the twelve CV outputs along the right edge. The position of Point is a pair of X and Y voltages, where X = -5, Y = -5 is at the lower left corner and X = 5, Y = 5 is
+The Point is a small circle in the Surface that controls the signals sent by each of the twelve CV outputs along the right edge. The position of the Point is a pair of X and Y voltages, where X = -5, Y = -5 is at the lower left corner and X = 5, Y = 5 is
 at the upper right corner.
 
 There are menu options on Twixt to change either or both of the X and Y axis from the [-5, 5] range to [0, 10].
@@ -92,16 +92,16 @@ There are menu options on Twixt to change either or both of the X and Y axis fro
 
 The Point's position can be set (and moved) in a number of ways (see [this video for a demonstration](https://youtu.be/mH-AyvrwWUw)):
 * Clicking or dragging on the surface will move the Point to that position.
-* On the left side of Twixt, there are a number of controls to move Point: 
+* On the left side of Twixt, there are a number of controls to move the Point: 
 * * Inputs at the top for setting X and Y. If these are not set, then the last position set by clicking on the surface will be used.
 * * Below that, inputs with attenuverters are added to the values from the inputs (or last clicked position). Note that, somewhat unusually, the attenuverters range from -200% to 200%.
-* * And below that are outputs of the current position of Point. Note that you can use these to chain together multiple Twixt modules with the same movement; just connect the X & Y outputs of the first Twixt to the X & Y inputs of the second.
+* * And below that are outputs of the current position of the Point. Note that you can use these to chain together multiple Twixt modules with the same movement; just connect the X & Y outputs of the first Twixt to the X & Y inputs of the second.
 * Note that X and Y are independent of each other, meaning that you can, for example, use the inputs above to control the X position of Point, but control the Y solely by your mouse clicks on the Surface.
 
 #### Movement Files
 To make Point movements easier to create, Twixt includes some .WAV files that can be played with many VCV Rack sample players (including my own [Memory System](https://github.com/mahlenmorris/VCVRack/blob/main/Memory.md)). They are written to the folder **plugins-[your OS]\StochasticTelegraphTwixt\twixt-waves** underneath your Rack2 user folder. Play one in Memory and use the left and right outputs as signals to X and Y.
 
-![Playing a .WAV file to move Point](images/TwixtMover.png)
+![Playing a .WAV file to move the Point](images/TwixtMover.png)
 
 They currently include movement in a circle, a square, and a triangle. Playing these files slower, faster, reversed, amplified, and combining/mixing multiple playback heads or files can create interesting movements.
 
@@ -122,12 +122,12 @@ These methods are in order from most-to-least gradual changes in output values. 
 
 The display for whichever Output is selected will be different for each of these TWIXT settings, showing how they affect Output values.
 
-Note that in the **Block Topology**, **Bilinear Squared** and **Bilinear Cubic** TWIXT settings, the relative **size** of each squares (which can be changed with "q" and "e") affect the amount of influence that Square's values have. Try Twixt's "Size Matters" preset to see one example of this.
+Note that in the **Block Topology**, **Bilinear Squared** and **Bilinear Cubic** TWIXT settings, the relative **size** of each Square (which can be changed with "q" and "e") affects the amount of influence that Square's values have. Try Twixt's "Size Matters" preset to see one example of this.
 
 Also note that **Block Topology** has slightly different behavior than the others:
-* Point has to be inside a Square to take on its values.
-* If Point is outside of all Squares, then all Outputs are zero.
-* Squares can overlap; if Point is over more than one Square, then the Outputs take the value of the *smaller* Square. This allows you to use large Squares in the background to set
+* The Point has to be inside a Square to take on its values.
+* If the Point is outside of all Squares, then all Outputs are zero.
+* Squares can overlap; if the Point is over more than one Square, then the Outputs take the value of the *smaller* Square. This allows you to use large Squares in the background to set
 Output values, with smaller Squares setting special values for that area.
 
 ### TILING
@@ -137,13 +137,13 @@ Sometimes it's useful to have small discrete areas of Output values instead of c
 * **Hexagons**
 * **Triangles**
 
-The non-None settings all impose a pattern of tiles of the stated shape over the Surface defined by the Squares and TWIXT. Each tile uses the Output values from
-the center of that tile and uses them for the entirety of the tile.
+The non-None settings all impose a pattern of tiles of the stated shape over the Surface defined by the Squares and TWIXT. Each tile takes the Output values from
+its center and applies them to its entirety.
 
-Tiling can be especially interesting when you control two or more Twixt's with the same mouse gestures. Try using different tilings on the different Twixts! 
+Tiling can be especially interesting when you control two or more Twixts with the same mouse gestures. Try using different tilings on the different Twixts! 
 
 ### Outputs
-On the right side of the Twixt module is twelve sets of controls, one for each output:
+On the right side of the Twixt module are twelve sets of controls, one for each output:
 
 ![Twixt Outputs](images/TwixtOutputs.png)
 
@@ -170,7 +170,7 @@ illustrate the interpolation of values for the viewer.
 
 A few of them deserve further explanation:
 * **VCV Cable Ports** duplicates the coloring that VCV cable heads show when carrying a particular voltage.
-* **Distant Dawn** is esigned to only include colors that remain discernable for people with many forms of color blindness.
+* **Distant Dawn** is designed to only include colors that remain discernable for people with many forms of color blindness.
 * **White Stripes** highlights even small variations in Output voltages.
 * **Anonymous Zebra** also highlights small variations in Output voltages and is enjoyably cryptic and stripey. Try the "Ahhhh my eyes" preset as an example.
 
@@ -181,7 +181,7 @@ There are also options here that let Twixt decide what the range should be:
 
 * **Use range set by sliders above** - just uses the values of the sliders
 * **Auto-fit to all values** - Computes the maximum and minimum values across the entire Twixt. With this, you use the entirety of the colors in the Color Scheme, 
-but a particular value will be the same color from oune Output to another. 
+but a particular value will be the same color from one Output to another. 
 * **Auto-fit to current output** - Computes the maximum and minimum values for each Output. So every Output display always runs the full color gamut, but a color will mean different
 values in different Outputs.
 
@@ -215,16 +215,16 @@ Once you've gotten your Twixt module's Outputs the way you want them, you can re
 * Place a Mixt module directly next to your Twixt module (the appropriate connection light at the top will illuminate).
 * Select a Square in Twixt.
 * On Mixt, adjust the Upper and Lower limits (e.g., 0V to 5V).
-* Use the DISTRIBUTION knob to select the how you want values to be chosen. 
-* Click the **CURRENT SQUARE** button to randomize the values of the current Square. The Output knobs for that Square will instant;y change.
+* Use the DIST or BIAS knobs to select how you want values to be chosen. 
+* Click the **CURRENT SQUARE** button to randomize the values of the current Square. The Output knobs for that Square will instantly change.
 * Listen to the new output. If you don't like it, press **Ctrl+Z** (Undo) to instantly revert.
-* Try turning the DISTRIBUTION knob to shape the probability curve, then click **CURRENT SQUARE** button again and see how the values come out.
+* Try turning the DIST knob to shape the probability curve, then click **CURRENT SQUARE** button again and see how the values come out.
 
 ## Uses
-* **Dial in more useful randomizations.** Twixt's built-in randomization sets outputs anywhere from -10V to 10V. If an Output is being used in a was that only sounds good when the outputs stay between -1V and 2.2V, use Mixt to randomize the Output to that range, and use DIST, BIAS and the Left/Both/Right switch to affect how those values are chosen.
+* **Dial in more useful randomizations.** Twixt's built-in randomization sets Outputs anywhere from -10V to 10V. If an Output is being used in a way that only sounds good when the Outputs stay between -1V and 2.2V, use Mixt to randomize the Output to that range, and use DIST, BIAS and the Left/Both/Right switch to affect how those values are chosen.
 * **Targeted parameter shuffling.** Randomize just the positions of your squares while leaving their values intact, or randomize a single CV output across your entire surface more quickly than moving through each Square.
-* **Set all Outputs to a single value.** At the lowest value of DIST, it will set all values it randomizes to the average of the two limits. For example, set both limits to 2.25, pick the lowest DISTRIBUTION value, and whatever you now randomize will all be set to 2.25. Note that the highest value of DIST will only set values to one or the other of the two limits.
-* Easily moving the Squares about the Surface speedily while allowing you to Undo the changes easily.
+* **Set all Outputs to a single value.** At the lowest value of DIST, it will set all values it randomizes to the average of the two limits. For example, set both limits to 2.25, pick the lowest DIST value, and whatever you now randomize will all be set to 2.25. Note that the highest value of DIST will only set values to one or the other of the two limits.
+* Quickly move the Squares about the Surface while retaining the ability to easily Undo changes.
 
 ## Controls
 
@@ -236,11 +236,11 @@ These knobs define the pool of random values that will be generated.
 #### Upper Limit Knob
 The maximum value of the range of OUT values. Defaults to 10.0V.
 Don't worry if this is below the lower limit, Mixt will automatically
-swap the limits in a sensical way.
+swap the limits in a sensible way.
 #### Lower Limit Knob
 The minimum value of the range of OUT values. Defaults to -10.0V.
 Don't worry if this is above the upper limit, Mixt will automatically
-swap the limits in a sensical way.
+swap the limits in a sensible way.
 
 ----
 This illustrates how the switch, DIST, and BIAS interact:
@@ -272,10 +272,10 @@ These buttons all perform actions on any Twixt modules touching the left or righ
 
 ### Randomize Buttons
 Four buttons trigger immediate randomizations in adjacent Twixt modules based on your Limits and Distribution settings. 
-* **Current Square** randomizes all 12 output values of the Square currently selected in Twixt.
+* **Current Square** randomizes all 12 Output values of the Square currently selected in Twixt.
 * **Current Output** randomizes the value of the currently selected Output (CV 1-12) across *all* Squares in Twixt.
-* **All Squares** randomizes all 12 output values for *every* Square on the Twixt surface.
-* **All Positions** randomizes the X and Y positions of all Squares on the Twixt surface, but does not change the Output values for any Squares. The DISTRIBUTION has no effect on this operation.
+* **All Squares** randomizes all 12 Output values for *every* Square on the Twixt Surface.
+* **All Positions** randomizes the X and Y positions of all Squares on the Twixt Surface, but does not change the Output values for any Squares. The DIST and BIAS knobs have no effect on this operation.
 
 ### Nudge Buttons
 There are eight buttons for nudging either values or Square positions.
