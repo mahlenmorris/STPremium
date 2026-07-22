@@ -27,6 +27,7 @@ Short videos: [an early teaser](https://youtu.be/XVvhzCE7Hsk?si=nbeVQ3aMhPy6dM-O
 
 Feature videos:
 * [Introduction and controls](https://youtu.be/u9njGX3w1Nk)
+* [Visuals demo](https://youtu.be/U1B-2HEV5p0)
 * [Moving Point](https://youtu.be/mH-AyvrwWUw).
 
 ### Uses
