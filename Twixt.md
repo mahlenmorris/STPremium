@@ -1,6 +1,6 @@
 # Twixt, a CV signal controller module for VCV Rack
 
-Twiddle twelve signals with a single click. Twixt is a signal generator for VCV Rack with twelve outputs.
+Change twelve CV signals with a single click.
 
 Twixt is useful for exploring the sonic spaces between desired sonic points (the Squares). It also has unique randomization capabilities (with undo and redo) using the companion module [Mixt](#mixt) that make it delightful for sonic exploration. 
 
@@ -98,6 +98,8 @@ The Point's position can be set (and moved) in a number of ways (see [this video
 * * Below that, inputs with attenuverters are added to the values from the inputs (or last clicked position). Note that, somewhat unusually, the attenuverters range from -200% to 200%.
 * * And below that are outputs of the current position of the Point. Note that you can use these to chain together multiple Twixt modules with the same movement; just connect the X & Y outputs of the first Twixt to the X & Y inputs of the second.
 * Note that X and Y are independent of each other, meaning that you can, for example, use the inputs above to control the X position of Point, but control the Y solely by your mouse clicks on the Surface.
+
+Here is the [patch for that video](https://patchstorage.com/demo-of-how-to-move-point-in-twixt-module-and-venn/).
 
 #### Movement Files
 To make Point movements easier to create, Twixt includes some .WAV files that can be played with many VCV Rack sample players (including my own [Memory System](https://github.com/mahlenmorris/VCVRack/blob/main/Memory.md)). They are written to the folder **plugins-[your OS]\StochasticTelegraphTwixt\twixt-waves** underneath your Rack2 user folder. Play one in Memory and use the left and right outputs as signals to X and Y.
