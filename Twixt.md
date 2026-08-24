@@ -29,6 +29,7 @@ Feature videos:
 * [Introduction and controls](https://youtu.be/u9njGX3w1Nk)
 * [Visuals demo](https://youtu.be/U1B-2HEV5p0)
 * [Moving Point](https://youtu.be/mH-AyvrwWUw).
+* [Using Twixt to explore other modules](https://youtu.be/D2ZLefEqjBI)
 
 ### Uses
 * **Access the sounds between other sounds.** When you have two or more distinct sonic qualities you want to explore for the same section of a patch (e.g., making the lead melody "clean" vs. "drenched in chorus and reverb" vs. "overdriven"):
